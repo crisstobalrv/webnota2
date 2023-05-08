@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="./js/todo.js"></script>
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="assets/css/estilospago.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <form action="">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">Informacion de pago</h3>
+
+                <div class="inputBox">
+                    <span>Nombre Completo :</span>
+                    <input type="text" placeholder="Ejemplo Gutierrez" required id="nomcompleto">
+                </div>
+                <div class="inputBox">
+                    <span>email :</span>
+                    <input type="email" placeholder="ejemplo@ejemplo.com" required id="email">
+                </div>
+                <div class="inputBox">
+                    <span>Direccion :</span>
+                    <input type="text" placeholder="Por ahi 1234" required id="direccionf">
+                </div>
+                <div class="inputBox">
+                    <span>Ciudad :</span>
+                    <input type="text" placeholder="Concepcion" required id="ciudad">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Comuna</span>
+                        <input type="text" placeholder="Bio Bio" required id="comuna">
+                    </div>
+                    <div class="inputBox">
+                        <span>Telefono</span>
+                        <input type="number" placeholder="923456532" required id="telefono">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <h3 class="title">Datos del metodo de pago</h3>
+
+                <div class="inputBox">
+                    <span>Tarjetas Aceptadas:</span>
+                    <img src="assets/images/card_img.png" alt="">
+                </div>
+                <div class="inputBox">
+                    <span>Nombre Titular :</span>
+                    <input type="text" placeholder="Cristobal Retamal" required id="nomtitular">
+                </div>
+                <div class="inputBox">
+                    <span>Numero Tarjeta :</span>
+                    <input type="number" placeholder="1111-2222-3333-4444" required id="numtarjeta">
+                </div>
+                <div class="inputBox">
+                    <span>Mes/Exp</span>
+                    <input type="text" placeholder="Enero" required id="mes">
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Año/Exp</span>
+                        <input type="number" placeholder="2027" required id="añoexp">
+                    </div>
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="number" placeholder="134" required id="cvv">
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+        <span id="mensaje-error" class="d-block center"
+                style="font-weight: bolder; color: gold; text-align: center"></span>
+        <button type="submit" class="registerbtn" id="btnentrar">Pagar</button>
+
+    </form>
+
+    <script>
+        var expremail = /^[a-zA-Z0-9_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
+        var exprnombre = /^[a-zA-Z ]+$/;
+        var exprtelefono = /^\d{9}$/;
+        var exprtarjeta = /^\d{16}$/;
+        var expraño = /^\d{4}$/;
+        var exprtcvv = /^\d{3}$/;
+        var exprdireccion = /^[a-zA-Z0-9\s,'-]*$/;
+        var meses = /^(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)$/;
+        $(document).ready(function () {
+            $("#btnentrar").click(function (e) {
+                e.preventDefault();
+                var nomcompleto = $("#nomcompleto").val();
+                var email = $("#email").val();
+                var direccionf = $("#direccionf").val();
+                var ciudad = $("#ciudad").val();
+                var comuna = $("#comuna").val();
+                var telefono = $("#telefono").val()
+                var nomtitular = $("#nomtitular").val();
+                var numtarjeta = $("#numtarjeta").val();
+                var mes = $("#mes").val();
+                var añomes = $("#añomes").val();
+                var cvv = $("#cvv").val();
+                
+
+                if (nomcompleto == "" || !exprnombre.test(nomcompleto)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un nombre válido"
+                    );
+                    $("#nomcompleto").focus();
+                    return;
+                }
+                else if (nomcompleto = "" || nomcompleto.split(" ").length < 2) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un nombre con almenos un apellido."
+                    );
+                    $("#nomcompleto").focus();
+                    return;
+                } 
+                
+                else if (email == "" || !expremail.test(email)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un email válido."
+                    );
+                    $("#email").focus();
+                    return;
+                }
+
+                else if (direccionf == "" || !exprdireccion.test(direccionf)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese una direccion válida."
+                    );
+                    $("#direccionf").focus();
+                    return;
+                }
+
+                else if (ciudad == "" || !exprnombre.test(ciudad)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese una ciudad válida."
+                    );
+                    $("#ciudad").focus();
+                    return;
+                }
+
+                else if (comuna == "" || !exprnombre.test(comuna)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese una comuna válida."
+                    );
+                    $("#comuna").focus();
+                    return;
+                }
+
+                else if (telefono == "" || !exprtelefono.test(telefono)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un numero telefono válido de 9 digitos."
+                    );
+                    $("#telefono").focus();
+                    return;
+                }
+                
+                else if (nomtitular == "" || !exprnombre.test(nomtitular)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un nombre válido."
+                    );
+                    $("#nomtitular").focus();
+                    return;
+                }
+
+                else if (nomtitular.trim() == "" || nomtitular.split(" ").length < 2) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un nombre con almenos un apellido."
+                    );
+                    $("nomtitular").val("");
+                    return;
+                } 
+                
+                else if (numtarjeta == "" || !exprtarjeta.test(numtarjeta)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un numero de tarjeta válido de almenos 16 digitos."
+                    );
+                    $("#numtarjeta").focus();
+                    return;
+                }
+
+                else if (mes == "" || !exprnombre.test(mes)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese una mes válido."
+                    );
+                    $("#mes").focus();
+                    return;
+                }
+                else if (añoexp == "" || !añoexp.length == 4) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un año válido de 4 digitos."
+                    );
+                    $("#añoexp").focus();
+                    return;
+                }
+                else if (cvv == "" || !añoexp.length == 3) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un codigo de seguridad válido de 3 digitos."
+                    );
+                    $("#cvv").focus();
+                    return;
+                }
+
+                else {
+                    return window.location.replace("index.html");
+                }
+
+                console.log("Email:", email);
+                console.log("Contraseña:", password);
+            });
+        });
+    </script>
+
+</div>    
+    
+</body>
+</html>

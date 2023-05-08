@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina web</title>
+    <link rel="shortcut icon" href="img/fondo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+
+        body{
+            background-image: url("img/fondo.jpg");
+
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header" id="header">
+        
+        <nav class="nav container">
+           <A>  <href="#" class="navL">
+                <img src="img/favicon.png" alt="" class="navL-img">
+            </A>
+            <a href="login.html"> LOGIN</a>
+            <a href="registro.html"> REGISTRO</a>
+            <a href="pago.html">pago</a>
+
+            <div class="navM" id="nav-menu">
+
+                <ul class="navList">
+                    <li class="navItem">
+                        <a href="#home" class="navLink active-link">Inicio</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#about" class="navLink">Nosotros</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#product" class="navLink">Productos</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#new" class="navLink">Nuevos</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#supporting" class="navLink">Soporte</a>
+                    </li>
+                    <li class="navItem">
+                        <a href="#supporting" class="navLink">Soporte</a>
+                    </li>
+                        <class="navbar-nav">
+                        <li class="nav-item">
+                          <a
+                            class="nav-link text-white"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modal"
+                          >
+                        <i class="bi bi-cart mx-5" id="carritoContenedor">0</i>
+                          </a>
+                        </li>
+                      
+                    </nav>
+                    
+                </ul>
+                <div> 
+                    
+
+                </div>
+                <div class="navClose" id="nav-close">
+                    <i class="bx bx-x"></i>
+                </div>
+                
+            </div>
+           
+
+        </nav>
+        
+        
+
+    </header>
+    <main>
+        <div class="row mt-5" id="contenedor"></div>
+      </main>
+    
+     <main class="main">
+        <div class="modal" tabindex="-1" role="dialog" id="modal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Carrito</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" id="vaciarCarrito">
+                    Vaciar carrito
+                  </button>
+                  <button type="button" id="procesarCompra" class="btn btn-primary">
+                    Continuar compra
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <span>Precio total:</span>
+                  <p class="text-center" id="precioTotal"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Home-->
+        <section class="home container" id="home">
+            <div class="swiper home-swiper">
+                <div class="swiper-wrapper">
+
+                    <section>
+                        <div class="homecont grid">
+
+                            <div class="homedata">
+                                <h1 class="homet">DEVIL <br> MAY <br> CRY</h1>
+                                <p class="homedes"> 
+                                    La historia tiene lugar cinco años después de los eventos de Devil May Cry 4. 
+                                    Nero creó su propia agencia de caza de demonios con una furgoneta adornada con un letrero de neón "Devil May Cry" que Dante le dio con el apoyo de Kyrie y su ingeniero Nico. 
+                                    Pero el 30 de abril, Nero se encuentra con un demonio moribundo que se arranca el brazo de Devil Bringer y usa el Devil Arm Yamato para abrir un portal para escapar
+                                </p>
+                                
+                            </div>
+                            <div class="homeg">
+                                <img src="img/home1.jpg" class="homeimg" alt="">
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </section>
+
+        <!--Category-->
+        <section class="section category">
+
+            <h2 class="stitle">Las mejores <br> Categorias</h2>
+
+            <div class="catcontainer container grid">
+
+                <div class="catdata">
+                    <img src="img/categoria1.jpg" class="catimg" alt="">
+                    <h3 class="cattitle">BAYONETTA 2</h3>
+                    <p class="catdes"> más potente que nunca! Equípate de un nuevo arsenal y
+                         ataques como el Clímax de Umbra en este apasionante juego de acción.</p>
+                </div>
+
+                <div class="catdata">
+                    <img src="img/producto6.jpg" class="catimg" alt="">
+                    <h3 class="cattitle">INFOMOUS</h3>
+                    <p class="catdes">videojuego de acción-aventura y shooter en tercera persona</p>
+                </div>
+
+                <div class="catdata">
+                    <img src="img/producto5.jpg" class="catimg" alt="">
+                    <h3 class="cattitle">God of War: Ragnarök</h3>
+                    <p class="catdes">Basado libremente en la mitología nórdica, el juego se desarrolla en la antigua Escandinavia y
+                         presenta al protagonista de la serie Kratos y su hijo adolescente Atreus</p>
+                </div>
+
+            </div>
+        </section>
+
+         <!--About-->
+         <section class="section about" id="about">
+            <div class="abcontainer container grid">
+                <img src="img/vayne 2.jpg" class="aboutimg" alt="">
+                <div class="abdata">
+                    <h2 class="stitle abti">Nosotros <br> Somos</h2>
+                    <p class="abdes">estudiantes diseñando una pag web</p>
+                    <a href="#" class="button">consectetur </a>
+                </div>
+            </div>
+         </section>
+
+          <!--Product-->
+
+          <section class="section product" id="product">
+
+            <h2 class="stitle">Productos</h2>
+
+            <div class="pdcontainer container grid">
+
+                <div class="pdcontent">
+                    <img src="img/producto1.jpg" class="productimg" alt="">
+                    <h3 class="pdtitle">Assassin's Creed</h3>
+                    <span class="pdsub"> </span>
+                    <span class="pdprice">19.990</span>
+                    <button class="button pdbut">
+                        <i class="bx bx-cart-alt producticon"></i>
+
+                    </button>
+                    
+                    
+                </div>
+
+                <div class="pdcontent">
+                    <img src="img/producto2.jpg" class="productimg" alt="">
+                    <h3 class="pdtitle">Resident Evil 4</h3>
+                    <span class="pdsub"> </span>
+                    <span class="pdprice">$59.990</span>
+                    <button class="button pdbut">
+                        <i class="bx bx-cart-alt producticon"></i>
+                    </button>
+                </div>
+
+                <div class="pdcontent">
+                    <img src="img/producto3.jpg" class="productimg" alt="">
+                    <h3 class="pdtitle">Call of Duty: Black Ops Cold War</h3>
+                    <span class="pdsub"> </span>
+                    <span class="pdprice">$32.990</span>
+                    <button class="button pdbut">
+                        <i class="bx bx-cart-alt producticon"></i>
+                    </button>
+                </div>
+
+                <div class="pdcontent">
+                    <img src="img/producto4.jpg" class="productimg" alt="">
+                    <h3 class="pdtitle">Uncharted: The Nathan Drake Collection</h3>
+                    <span class="pdsub"> </span>
+                    <span class="pdprice">$25.990</span>
+                    <button class="button pdbut">
+                        <i class="bx bx-cart-alt producticon"></i>
+                    </button>
+                </div>
+
+                <div class="pdcontent">
+                    <img src="img/producto5.jpg" class="productimg" alt="">
+                    <h3 class="pdtitle">God of War: Ragnarök</h3>
+                    <span class="pdsub"> </span>
+                    <span class="pdprice">$23.990</span>
+                    <button class="button pdbut">
+                        <i class="bx bx-cart-alt producticon"></i>
+                    </button>
+                </div>
+
+                <div class="pdcontent">
+                    <img src="img/producto6.jpg" class="productimg" alt="">
+                    <h3 class="pdtitle">INFOMOUS</h3>
+                    <span class="pdsub"> </span>
+                    <span class="pdprice">$19.990</span>
+                    <button class="button pdbut">
+                        <i class="bx bx-cart-alt producticon"></i>
+                    </button>
+                </div>
+            </div>
+
+          </section>
+
+
+     <!--Discount-->
+          <section class="section discount">
+            
+            <div class="dscont container grid">
+
+                <div class="disdata">
+                    <h2 class="distitle">50% Descuento <br> Productos</h2>
+                    <a href="#" class="button">Vamos</a>
+                </div>
+                <img src="img/producto4.jpg" class="disimg" alt="">
+
+            </div>
+
+          </section>
+
+    <!--New-->
+    <section class="section new" id="new">
+        <h2 class="stitle">Nuevos productos</h2>
+
+        <div class="newcont container">
+            <div class="swiper new-swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="newcontent swiper-slide">
+                        <div class="newtag">Nuevo</div>
+                        <img src="img/producto3.jpg" class="newimg" alt="">
+                        <h3 class="newti">Call of Duty: Black Ops Cold War</h3>
+                        <span class="newsub"></span>
+                        <div class="newps">
+                            <span class="newpri">$32.990</span>
+                            <span class="newdis">$42.990</span>
+                        </div>
+                        <button class="button newbu">
+                            <i class="bx bx-cart-alt newicon"></i>
+                        </button>
+                    </div>
+                    <div class="newcontent swiper-slide">
+                        <div class="newtag">Nuevo</div>
+                        <img src="img/producto5.jpg" class="newimg" alt="">
+                        <h3 class="newti">God of War: Ragnarök</h3>
+                        <span class="newsub"></span>
+                        <div class="newps">
+                            <span class="newpri">$23.990</span>
+                            <span class="newdis">$33.990</span>
+                        </div>
+                        <button class="button newbu">
+                            <i class="bx bx-cart-alt newicon"></i>
+                        </button>
+                    </div>
+                    <div class="newcontent swiper-slide">
+                        <div class="newtag">Nuevo</div>
+                        <img src="img/producto2.jpg" class="newimg" alt="">
+                        <h3 class="newti">RESIDENT EVIL 4</h3>
+                        <span class="newsub">lorem</span>
+                        <div class="newps">
+                            <span class="newpri">$59.990</span>
+                            <span class="newdis">$89.990</span>
+                        </div>
+                        <button class="button newbu">
+                            <i class="bx bx-cart-alt newicon"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!--supporting-->
+    <section class="section supporting" id="supporting"></section>
+        <div class="newslc container">
+            <h2 class="stitle">soporte</h2>
+            <p class="newsld">contactanos a traves de el correo electronico </p>
+
+                 <form action="" class="newslf">
+                    <input type="text" placeholder="ingresa tu correo" class="newslin">
+                    <button class="button2">Subscribete</button>
+        
+                </form>
+        </div>
+     
+    </section>
+
+
+    </main>
+
+     <!--Footer-->
+     <footer class="footer section">
+
+        <div class="ftcontainer container grid">
+
+            <div class="ftcontent">
+
+                <a href="#" class="footerL">
+                    <img src="img/favicon.png" class="footerL-img" alt="">
+                    INFO
+                </a>
+
+                <p class="footerdescription">informcaiocn de la pagina<br> contactos</p>
+
+                <div class="footersocial">
+
+                    <a href="#" target="_black" class="footersocial-link">
+                        <i class="bx bxl-facebook"></i>
+                    </a>
+                    <a href="#" target="_black" class="footersocial-link">
+                        <i class="bx bxl-instagram-alt"></i>
+                    </a>
+
+                    <a href="#" target="_black" class="footersocial-link">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ftcontent">
+
+                <h3 class="ftti">Nosotros</h3>
+                <ul class="ftli">
+                    <li>
+                        <a href="#" class="ftrli">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="#" class="ftrli">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="#" class="ftrli">soporte</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="ftcontent">
+
+                <h3 class="ftti">Servicio</h3>
+                <ul class="ftli">
+                    <li>
+                        <a href="#" class="ftrli">reembolso</a>
+                    </li>
+                    <li>
+                        <a href="#" class="ftrli">sugerencias</a>
+                    </li>
+                    <li>
+                        <a href="#" class="ftrli">reclamos</a>
+                    </li>
+                </ul>
+            </div>
+
+            
+
+        </div>
+
+        <span class="footercopy">&#169;</span>
+
+     </footer>
+
+
+     <a href="#" class="scrollup" id="scroll-up">
+         <i class="bx bx-up-arrow-alt scrollupicon"></i>
+     </a>
+
+    <script src="carrito.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

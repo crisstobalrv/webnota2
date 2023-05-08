@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="./js/todo.js"></script>
+
+
+</head>
+
+<body>
+    <form class="formulario">
+
+        <h1>Registro</h1>
+        <div class="contenedor">
+
+            <div class="input-contenedor">
+                <i class="fas fa-user icon"></i>
+                <input type="text" placeholder="Ejemplo Gutierrez" required id="nombre">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" placeholder="ejemplo@ejemplo.cl" required id="email">
+
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" placeholder="ejemplo123" required id="pass">
+                <span id="help-password"></span>
+            </div>
+
+            <div class="input-contenedor">
+                <i class="fas fa-key icon"></i>
+                <input type="password" placeholder="ejemplo123" required id="confimarpass">
+            </div>
+            <span id="mensaje-error" class="d-block center"
+                style="font-weight: bolder; color: gold; text-align: center"></span>
+           
+                <button type="submit" class="registerbtn" id="btnentrar">Registrarme</button>
+            
+                <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p>¿Ya tienes una cuenta?<a style="text-decoration: underline;" class="link"
+                    href="login.html">IniciarSesion</a></p>
+        </div>
+    </form>
+
+    <script>
+        var exprnombre = /^[a-zA-Z ]+$/;
+        var expremail = /^[a-zA-Z0-9_.]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
+        $(document).ready(function () {
+            $("#btnentrar").click(function (e) {
+                e.preventDefault();
+                var nombre = $("#nombre").val()
+                var email = $("#email").val();
+                var password = $("#pass").val();
+                var confimarpass = $("#confimarpass").val();
+
+                if (nombre == "" || !exprnombre.test(nombre)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un nombre válido."
+                    );
+                    $("#nombre").focus();
+                    return;
+                }
+                else if (nombre.trim() == "" || nombre.split(" ").length < 2) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un nombre con almenos un apellido."
+                    );
+                    $("nombre").val("");
+                    return;
+                }
+                else if (email == "" || !expremail.test(email)) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese un email válido."
+                    );
+                    $("#email").focus();
+                    return;
+                }
+                else if (password.length <= 2) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese una contraseña con almenos 3 caracteres."
+                    );
+                    $("#pass").focus(); // enfoque en el campo de contraseña
+                    $("#pass").val("");
+                    return;
+                }
+                else if (confimarpass.length <= 2) {
+                    $("#mensaje-error").text(
+                        "Por favor, ingrese una contraseña con almenos 3 caracteres."
+                    );
+                    $("#pass, #confimarpass").val("");
+                    $("#confirmarpass").focus();
+                    return;
+                } else if (password != confimarpass) {
+                    $("#mensaje-error").text(
+                        "Las contraseñas no coinciden intentelo denuevo"
+                    );
+                    $("#pass, #confimarpass").val("");
+                    $("#pass").focus();
+                    return;
+                } else {
+                    $('#bienvenida').html('<p>Bienvenido, ' + nombre + '!</p>').show();
+                    return window.location.replace("index.html");
+                    
+                }
+                console.log("Nombre:", nombre)
+                console.log("Email:", email);
+                console.log("Contraseña:", password);
+                console.log("Confirmacion contraseña:", confimarpass);
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
